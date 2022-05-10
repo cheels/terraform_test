@@ -1,0 +1,2 @@
+python-terraform==0.10.1
+hazelcast-python-client==5.1
