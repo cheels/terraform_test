@@ -69,3 +69,6 @@ target/
 .directory
 
 *.jar
+*.tfstate*
+.terraform/
+*.lock.hcl
