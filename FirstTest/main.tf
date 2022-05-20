@@ -1,12 +1,24 @@
 provider "aws" {
-  access_key = ""
-  secret_key = ""
+  access_key =  var.access_key
+  secret_key =  var.secret_key
   region = "eu-west-2"
 }
 
+variable "access_key" {
+  type = string
+}
+variable "secret_key" {
+  type = string
+}
+variable "public_key" {
+  type = string
+}
+variable "private_key_path" {
+  type = string
+}
 resource "aws_key_pair" "deployer" {
   key_name   = "aws_key"
-  public_key = ""
+  public_key = var.public_key
 }
 
 resource "aws_instance" "ec2" {
@@ -22,7 +34,7 @@ resource "aws_instance" "ec2" {
       type        = "ssh"
       host        = self.public_ip
       user        = "ubuntu"
-      private_key = file("Path of ssh private key file")
+      private_key = file(var.private_key_path)
     }
 
     provisioner "file" {
