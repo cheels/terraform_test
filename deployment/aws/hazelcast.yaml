@@ -1,5 +1,7 @@
 hazelcast:
   license-key: LICENSE_KEY
+  jet:
+    enabled: true
   cluster-name: amazon
   network:
     join:
