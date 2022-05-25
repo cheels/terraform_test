@@ -6,7 +6,7 @@ app = Flask("provisioner")
 app = Flask(__name__, static_url_path='')
 
 
-@app.route('/cluster/create', defaults={'cluster_size': 3})
+@app.route('/cluster/create/', defaults={'cluster_size': 3})
 @app.route('/cluster/create/<int:cluster_size>')
 def create_cluster(cluster_size):
     project_path = os.path.dirname(os.path.dirname(__file__))
