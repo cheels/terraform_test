@@ -1,0 +1,9 @@
+hazelcast:
+  license-key: LICENSE_KEY
+  cluster-name: amazon
+  network:
+    join:
+      tcp-ip:
+        enabled: true
+        member-list:
+          - MEMBERS
