@@ -34,7 +34,7 @@ def get_public_dns():
     tf = Terraform(working_dir=os.path.dirname(os.path.dirname(__file__)) + '/terraform_test/deployment/initial_run')
     result = tf.output()
     if result == {}:
-        return "There are no any public DNS. To get the DNS please create the cluster before!"
+        return jsonify(error="There are no any public DNS. To get the DNS please create the cluster before.")
     else:
         public_dns = result['aws_members_public_dns']['value'][0]
         return jsonify(
